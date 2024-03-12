@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projettest-ilyes": {
+      "hosting": {
+        "scheduletyd": [
+          "projettest-ilyes"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projettest-ilyes"
+  }
+}

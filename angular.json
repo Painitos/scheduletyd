@@ -98,8 +98,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "scheduletyd:build:production",
+              "serveTarget": "scheduletyd:serve:production"
+            },
+            "development": {
+              "buildTarget": "scheduletyd:build:development",
+              "serveTarget": "scheduletyd:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
