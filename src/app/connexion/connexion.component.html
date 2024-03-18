@@ -1,5 +1,24 @@
-<a [routerLink]="['/inscription']">
-  <button mat-raised-button color="primary">
-    Inscription
-  </button>
-</a>
+
+<body>
+  <h1>Connexion</h1>
+
+  <a [routerLink]="['/inscription']" >
+    <button mat-raised-button color="primary" id="Inscription">
+      Inscription
+    </button>
+  </a>
+
+  <form>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput required [(ngModel)]="email" >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mot de passe</mat-label>
+      <input matInput required [(ngModel)]="password" type="password">
+    </mat-form-field>
+      <button mat-raised-button color="primary" (click)=LogIn()>Se connecter</button>
+  </form>
+</body>
+
+

@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Connexion{
+  position: absolute;
+  top : 1vw;
+  right: 1vw;
+}
+
+h1{
+  text-align: center;
+  margin-top: 20vh;
+}
+
+body{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff00dd31;
+}
+
+mat-form-field{
+  width: 25vw;
+}
