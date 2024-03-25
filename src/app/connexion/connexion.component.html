@@ -11,11 +11,11 @@
   <form>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput required [(ngModel)]="email" >
+      <input matInput required [(ngModel)]="email" name="email" >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Mot de passe</mat-label>
-      <input matInput required [(ngModel)]="password" type="password">
+      <input matInput required [(ngModel)]="password" type="password" name="password">
     </mat-form-field>
       <button mat-raised-button color="primary" (click)=LogIn()>Se connecter</button>
   </form>
