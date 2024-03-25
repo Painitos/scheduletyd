@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -15,12 +14,14 @@ import {MatInputModule} from '@angular/material/input'
 import {FormsModule} from '@angular/forms'
 import { MatLabel } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { TestdbComponent } from './testdb/testdb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    TestdbComponent
   ],
   imports: [
     BrowserModule,
