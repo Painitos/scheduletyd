@@ -15,6 +15,8 @@ import {FormsModule} from '@angular/forms'
 import { MatLabel } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { TestdbComponent } from './testdb/testdb.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { TestdbComponent } from './testdb/testdb.component';
     FormsModule,
     MatLabel,
     MatSelectModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp({"projectId":"projettest-ilyes","appId":"1:485658576873:web:696a98ffef24d15bf86d78","storageBucket":"projettest-ilyes.appspot.com","apiKey":"AIzaSyBEJrDv8meilC9KXBEc0PRwq41rDBATCrI","authDomain":"projettest-ilyes.firebaseapp.com","messagingSenderId":"485658576873"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())

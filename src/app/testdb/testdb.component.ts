@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { doc, onSnapshot, Firestore } from "@angular/fire/firestore";
+import { ApiYoutubeService } from '../api-youtube.service';
 
 
 @Component({
@@ -10,9 +11,13 @@ import { doc, onSnapshot, Firestore } from "@angular/fire/firestore";
 export class TestdbComponent implements OnInit {
   public db: Firestore = inject(Firestore);
 
-  constructor() { }
+  constructor(public apiservice: ApiYoutubeService) { }
 
-  ngOnInit(): void { this.testdata(); }
+  ngOnInit(): void { this.testdata(); 
+  this.apiservice.getTYoutube().subscribe((data) => {
+    console.log(data);
+  } );
+}
 
   public testdata() {
 
