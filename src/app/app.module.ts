@@ -15,16 +15,15 @@ import {FormsModule} from '@angular/forms'
 import { MatLabel } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { TestdbComponent } from './testdb/testdb.component';
-import { TwitchComponent } from './twitch/twitch.component';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
     InscriptionComponent,
-    TestdbComponent,
-    TwitchComponent
+    TestdbComponent
   ],
   imports: [
     BrowserModule,
