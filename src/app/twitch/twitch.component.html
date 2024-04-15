@@ -1,1 +1,19 @@
-<a href='https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=qab21jlw203whqadnkqk44wav8955v&redirect_uri=http://localhost:4200/twitch&scope=channel%3Aread%3Asubscriptions user%3Aread%3Afollows&state=c3ab8aa609ea11e793ae92361f002671'>Connect with Twitch</a>
+<div *ngIf="followed_channels.length != 0; then ok else nok"></div>
+<ng-template #ok>
+  <h1>Chaines suivies</h1>
+  <mat-grid-list cols="5" rowHeight="2:1.5" gutterSize="1%">
+
+      <mat-grid-tile class="tile {{ channel.is_live }}" [routerLink]="['/twitchSchedule/'+channel.broadcaster_id]" *ngFor="let channel of followed_channels">
+        <a>
+          <h2>{{ channel.broadcaster_name }}</h2>
+          <img class="profile_picture" [src]="channel.profile_image_url" alt="profile image">
+        </a>
+      </mat-grid-tile>
+
+  </mat-grid-list>
+</ng-template>
+<ng-template #nok>
+  <h1>Connectez vous avec Twitch</h1>
+  <a href='https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=qab21jlw203whqadnkqk44wav8955v&redirect_uri=http://localhost:4200/twitch&scope=channel%3Aread%3Asubscriptions user%3Aread%3Afollows&state=c3ab8aa609ea11e793ae92361f002671'>Connect with Twitch</a>
+</ng-template>
+

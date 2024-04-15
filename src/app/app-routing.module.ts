@@ -4,6 +4,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { TestdbComponent } from './testdb/testdb.component';
 import { TwitchComponent } from './twitch/twitch.component';
+import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule.component';
 
 const routes: Routes = [
 {
@@ -21,6 +22,10 @@ const routes: Routes = [
 {
   path: 'twitch',
   component: TwitchComponent,
+},
+{
+  path: 'twitchSchedule/:broadcaster_id',
+  component: StreamerScheduleComponent,
 }
 
 ];
