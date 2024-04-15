@@ -17,7 +17,6 @@ import { MatLabel } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
 import { TestdbComponent } from './testdb/testdb.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -58,7 +57,7 @@ export const authConfig: AuthConfig = {
     AccueilComponent,
     SidebarComponent,
     YoutubeComponent,
-    UserProfilComponent,,
+    UserProfilComponent,
     TwitchComponent,
     StreamerScheduleComponent,
   ],

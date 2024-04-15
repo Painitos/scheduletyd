@@ -2,3 +2,8 @@ html{
   background-color: #ff00dd31;
   overflow-y: scroll;
 }
+
+#container{
+  margin-left : 6%;
+  margin-top : 5%;
+}

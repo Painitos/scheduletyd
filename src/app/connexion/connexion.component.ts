@@ -20,7 +20,7 @@ export class ConnexionComponent {
   public LogIn() {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
     .then((userCredential) => {
-      this.router.navigate(['/twitch']);
+      this.router.navigate(['/accueil']);
     })
     .catch((error) => {
       const errorCode = error.code;
