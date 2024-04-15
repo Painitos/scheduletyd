@@ -4,6 +4,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { TestdbComponent } from './testdb/testdb.component';
 import { TwitchComponent } from './twitch/twitch.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
 {
@@ -21,7 +22,11 @@ const routes: Routes = [
 {
   path: 'twitch',
   component: TwitchComponent,
-}
+},
+{
+  path: 'accueil',
+  component: AccueilComponent,
+},
 
 ];
 
