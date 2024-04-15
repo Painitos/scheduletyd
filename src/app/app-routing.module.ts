@@ -8,6 +8,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 
+
 const routes: Routes = [
 {
   path: 'connexion',
@@ -28,15 +29,6 @@ const routes: Routes = [
 {
   path: 'accueil',
   component: AccueilComponent,
-},
-
-{
-  path: 'Youtubelogin',
-  component: YoutubeComponent,
-},
-{
-  path: 'user-profil',
-  component: UserProfilComponent,
 },
 
 ];

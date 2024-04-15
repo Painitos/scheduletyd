@@ -42,6 +42,9 @@ export const authConfig: AuthConfig = {
 };
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,7 @@ export const authConfig: AuthConfig = {
     AccueilComponent,
     SidebarComponent,
     YoutubeComponent,
-    UserProfilComponent
+    UserProfilComponent,
   ],
   imports: [
     BrowserModule,
