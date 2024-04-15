@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { doc, onSnapshot, Firestore } from "@angular/fire/firestore";
 import { ApiYoutubeService } from '../api-youtube.service';
+import { switchMap } from 'rxjs';
 
 
 @Component({
@@ -14,7 +15,13 @@ export class TestdbComponent implements OnInit {
   constructor(public apiservice: ApiYoutubeService) { }
 
   ngOnInit(): void { this.testdata(); 
-  this.apiservice.getTYoutube().subscribe((data) => {
+  // this.apiservice.getChannelId("@AlderiateYoutube").subscribe((data) => {
+  //   console.log(data);
+  // } );
+  this.apiservice.getChannelId("@AlderiateYoutube").pipe(
+    switchMap((data:any)=>this.apiservice.getActivities(data.items[0].id)),
+
+  ).subscribe((data) => {
     console.log(data);
   } );
 }

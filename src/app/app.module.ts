@@ -20,7 +20,32 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { TestdbComponent } from './testdb/testdb.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AccueilComponent } from './accueil/accueil.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { OAuthModule, AuthConfig, OAuthService } from 'angular-oauth2-oidc';
+import { YoutubeComponent } from './youtube/youtube.component';
+import { UserProfilComponent } from './user-profil/user-profil.component';
 import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule.component';
+
+export const authConfig: AuthConfig = {
+  issuer: 'https://accounts.google.com',
+  redirectUri: "http://localhost:4200/Youtubelogin" ,
+  clientId: '485658576873-71nijenfk3nh91u7fuog9st67se58cui.apps.googleusercontent.com',
+  dummyClientSecret: '', // Ajoutez votre secret client ici
+
+  scope: 'openid profile email https://www.googleapis.com/auth/youtube.readonly',
+  responseType: 'code',
+  showDebugInformation: true,
+  strictDiscoveryDocumentValidation: false
+};
+
 
 
 
@@ -30,8 +55,12 @@ import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule
     ConnexionComponent,
     InscriptionComponent,
     TestdbComponent,
+    AccueilComponent,
+    SidebarComponent,
+    YoutubeComponent,
+    UserProfilComponent,,
     TwitchComponent,
-    StreamerScheduleComponent
+    StreamerScheduleComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,12 +72,16 @@ import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule
     MatLabel,
     MatSelectModule,
     HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    BrowserAnimationsModule,
     MatGridListModule,
-    MatDividerModule,
     MatListModule,
     provideFirebaseApp(() => initializeApp({"projectId":"projettest-ilyes","appId":"1:485658576873:web:696a98ffef24d15bf86d78","storageBucket":"projettest-ilyes.appspot.com","apiKey":"AIzaSyBEJrDv8meilC9KXBEc0PRwq41rDBATCrI","authDomain":"projettest-ilyes.firebaseapp.com","messagingSenderId":"485658576873"})),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    [OAuthModule.forRoot()],
   ],
   providers: [
     provideAnimationsAsync()
@@ -56,6 +89,8 @@ import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(private oauthService: OAuthService) {
+    this.oauthService.configure(authConfig);
+    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+ }
 }
-
-

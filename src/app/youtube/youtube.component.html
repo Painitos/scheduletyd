@@ -1,0 +1,15 @@
+<button (click)="login()">Se connecter avec YouTube</button>
+<button (click)="getData()">afficher token</button>
+
+<div *ngIf="followedChannels.length > 0">
+    <h2>Liste des canaux suivis :</h2>
+    <ul>
+      <li *ngFor="let channel of followedChannels">
+        <img [src]="channel.snippet.thumbnails.default.url" alt="Thumbnail">
+        <a [href]="'https://www.youtube.com/channel/' + channel.snippet.resourceId.channelId" target="_blank">{{ channel.snippet.title }}</a>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="followedChannels.length === 0">
+    <p>Aucun canal suivi.</p>
+</div>
