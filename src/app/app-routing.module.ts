@@ -30,6 +30,20 @@ const routes: Routes = [
   path: 'accueil',
   component: AccueilComponent,
 },
+{
+  path: 'youtube',
+  component: YoutubeComponent,
+},
+{
+  path: 'user-profil',
+  component: UserProfilComponent,
+},
+{
+  path: '',
+  redirectTo: '/accueil',
+  pathMatch: 'full'
+},
+
 
 ];
 
