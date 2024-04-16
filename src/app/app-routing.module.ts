@@ -4,6 +4,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { TestdbComponent } from './testdb/testdb.component';
 import { TwitchComponent } from './twitch/twitch.component';
+import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
@@ -43,7 +44,10 @@ const routes: Routes = [
   redirectTo: '/accueil',
   pathMatch: 'full'
 },
-
+{
+  path: 'twitchSchedule/:broadcaster_id',
+  component: StreamerScheduleComponent,
+}
 
 ];
 

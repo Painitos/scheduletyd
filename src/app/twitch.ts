@@ -1,8 +1,12 @@
-export interface TwitchAcessToken {
-  access_token: string;
-  expires_in: number;
-  token_type: string;
+export interface FollowedChannel {
+  broadcaster_id: string;
+  broadcaster_name: string;
 }
 
-export interface Twitch {
+export interface TwitchUser {
+  client_id: string;
+  login: number;
+  user_id: string;
+  expires_in : number;
 }
+

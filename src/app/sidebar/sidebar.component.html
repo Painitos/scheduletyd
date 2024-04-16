@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav color = "black" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
       <mat-nav-list >
-        <a mat-list-item>
+        <a mat-list-item [routerLink]="['/accueil']">
           <span class="entry">
             <mat-icon>house</mat-icon>
             <span *ngIf="!isCollapsed">Accueil</span>
@@ -19,7 +19,7 @@
             <span *ngIf="!isCollapsed">Paramètres</span>
           </span>
         </a>
-        <a mat-list-item>
+        <a mat-list-item [routerLink]="['/twitch']">
           <span class="entry">
             <mat-icon>podcasts</mat-icon>
             <span *ngIf="!isCollapsed">Lives</span>

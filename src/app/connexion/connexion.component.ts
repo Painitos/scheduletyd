@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { signInWithEmailAndPassword, Auth } from "@angular/fire/auth";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-connexion',
@@ -14,15 +15,12 @@ export class ConnexionComponent {
   public email: string = "";
   public password: string = "";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   public LogIn() {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
     .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log(user);
-      // ...
+      this.router.navigate(['/accueil']);
     })
     .catch((error) => {
       const errorCode = error.code;

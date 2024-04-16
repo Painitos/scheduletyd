@@ -1,0 +1,17 @@
+<html>
+  <div *ngIf="schedule; then ok else nok" ></div>
+  <ng-template #ok>
+    <h1>{{ schedule.broadcaster_name }}</h1>
+  <ul>
+    <li *ngFor="let event of schedule.segments">
+      <h2>{{ event.title }}</h2>
+      <p>{{ event.start_time | date:'dd/MM/yyyy HH:mm'}}</p>
+      <p>{{ event.end_time | date:'dd/MM/yyyy HH:mm'}}</p>
+    </li>
+
+  </ul>
+  </ng-template>
+  <ng-template #nok>
+    <h1>Aucun emploi du temps n'est disponible</h1>
+  </ng-template>
+</html>
