@@ -35,7 +35,7 @@ import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule
 
 export const authConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',
-  redirectUri: "http://localhost:4200/Youtubelogin" ,
+  redirectUri: "http://localhost:4200/YouLogin" ,
   clientId: '485658576873-71nijenfk3nh91u7fuog9st67se58cui.apps.googleusercontent.com',
   dummyClientSecret: '', // Ajoutez votre secret client ici
 

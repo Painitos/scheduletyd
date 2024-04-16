@@ -1,13 +1,24 @@
-<app-sidebar>
-</app-sidebar>
 
-<body>
-  
+
+<div class="welcome">
   <h1>Bienvenue sur notre site!</h1>
-   
-    
-  </body>
+</div>
 
-  <script>
-    
-  </script>
+<div class="activities">
+  <h2>Dernières activités</h2>
+  <div class="activity" *ngFor="let activity of latestActivities">
+    <img [src]="activity.snippet.thumbnails.default.url" alt="Thumbnail">
+    <p>{{ activity.snippet.title }}</p>
+    <!-- Ajoutez plus de détails sur l'activité si nécessaire -->
+  </div>
+</div>
+
+<div class="latest-videos">
+  <h2>Dernières vidéos d'Alderiate</h2>
+  <div class="video" *ngFor="let video of alderiateVideos">
+    <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
+      <img [src]="video.snippet.thumbnails.medium.url" alt="{{ video.snippet.title }}">
+      <p>{{ video.snippet.title }}</p>
+    </a>
+  </div>
+</div>
