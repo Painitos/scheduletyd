@@ -2,7 +2,9 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import {
   Component,
   ViewChild,
+  inject,
 } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -11,6 +13,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  public auth = inject(Auth);
   title = 'material-responsive-sidenav';
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
@@ -28,7 +31,8 @@ export class SidebarComponent {
       }
     });
   }
-  toggleMenu() {
+
+  public toggleMenu() {
     if(this.isMobile){
       this.sidenav.toggle();
       this.isCollapsed = false; // On mobile, the menu can never be collapsed
@@ -37,6 +41,11 @@ export class SidebarComponent {
       this.isCollapsed = !this.isCollapsed;
     }
   }
+
+  public disconnect() {
+    this.auth.signOut();
+  }
+
 }
 
 

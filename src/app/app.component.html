@@ -1,5 +1,7 @@
 <html>
-  <app-sidebar></app-sidebar>
+  <div id="sidebar" *ngIf="DisplaySidebar">
+    <app-sidebar></app-sidebar>
+  </div>
   <div id="container">
     <router-outlet></router-outlet>
   </div>

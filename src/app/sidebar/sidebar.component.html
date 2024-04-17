@@ -7,7 +7,7 @@
             <span *ngIf="!isCollapsed">Accueil</span>
           </span>
         </a>
-        <a mat-list-item>
+        <a mat-list-item [routerLink]="['/agenda']">
           <span class="entry">
             <mat-icon>event</mat-icon>
             <span *ngIf="!isCollapsed">Agenda</span>
@@ -23,6 +23,12 @@
           <span class="entry">
             <mat-icon>podcasts</mat-icon>
             <span *ngIf="!isCollapsed">Lives</span>
+          </span>
+        </a>
+        <a mat-list-item (click)="disconnect()">
+          <span class="entry">
+            <mat-icon>close</mat-icon>
+            <span *ngIf="!isCollapsed">Déconnexion</span>
           </span>
         </a>
       </mat-nav-list>

@@ -8,6 +8,7 @@ import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule
 import { AccueilComponent } from './accueil/accueil.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,11 @@ const routes: Routes = [
 {
   path: 'twitchSchedule/:broadcaster_id',
   component: StreamerScheduleComponent,
+},
+{
+  path: 'agenda',
+  component: AgendaComponent,
+
 }
 
 ];

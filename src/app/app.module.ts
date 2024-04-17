@@ -32,6 +32,7 @@ import { OAuthModule, AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',
@@ -60,6 +61,7 @@ export const authConfig: AuthConfig = {
     UserProfilComponent,
     TwitchComponent,
     StreamerScheduleComponent,
+    AgendaComponent,
   ],
   imports: [
     BrowserModule,

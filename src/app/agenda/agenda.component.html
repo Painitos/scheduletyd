@@ -1,0 +1,7 @@
+<body>
+  <h1>Streams à venir</h1>
+  <div *ngFor="let event of streamsToday">
+    <h2>{{ event.start_time | date:'HH:mm'}} {{ event.broadcaster_name }}</h2>
+    <p>{{ event.title }}</p>
+  </div>
+</body>
