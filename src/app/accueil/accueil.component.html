@@ -1,15 +1,24 @@
-<body>
-  
-    <app-sidebar>
-      </app-sidebar>
-    
-    <div> 
-    <p class = "search">
-      <mat-form-field appearance="outline">
-        <mat-label>Rechercher</mat-label>
-        <input matInput placeholder="Un streamer, peut-être ?">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
-    </p>
-    </div>
-  </body>
+
+
+<div class="welcome">
+  <h1>Bienvenue sur notre site!</h1>
+</div>
+
+<div class="activities">
+  <h2>Dernières activités</h2>
+  <div class="activity" *ngFor="let activity of latestActivities">
+    <img [src]="activity.snippet.thumbnails.default.url" alt="Thumbnail">
+    <p>{{ activity.snippet.title }}</p>
+    <!-- Ajoutez plus de détails sur l'activité si nécessaire -->
+  </div>
+</div>
+
+<div class="latest-videos">
+  <h2>Dernières vidéos d'Alderiate</h2>
+  <div class="video" *ngFor="let video of alderiateVideos">
+    <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
+      <img [src]="video.snippet.thumbnails.medium.url" alt="{{ video.snippet.title }}">
+      <p>{{ video.snippet.title }}</p>
+    </a>
+  </div>
+</div>

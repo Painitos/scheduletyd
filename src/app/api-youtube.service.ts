@@ -60,6 +60,10 @@ export class ApiYoutubeService {
     });
   }
 
+  getAgenda(channelId: string): Observable<any> {
+    return this.http.get<any>(`${this.baseurl}/agenda?part=snippet&channelId=${channelId}&maxResults=5&key=${this.key}`);
+  }
+
 
 
 }

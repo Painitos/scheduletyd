@@ -8,6 +8,7 @@ import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule
 import { AccueilComponent } from './accueil/accueil.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
+import { YoutubeLoginComponent } from './youtube-login/youtube-login.component';
 import { AgendaComponent } from './agenda/agenda.component';
 
 
@@ -53,7 +54,10 @@ const routes: Routes = [
   path: 'agenda',
   component: AgendaComponent,
 
-}
+},
+{ path: 'YouLogin',
+component: YoutubeLoginComponent,
+},
 
 ];
 
