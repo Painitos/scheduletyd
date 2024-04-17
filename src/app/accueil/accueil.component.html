@@ -4,21 +4,31 @@
   <h1>Bienvenue sur notre site!</h1>
 </div>
 
-<div class="activities">
-  <h2>Dernières activités</h2>
-  <div class="activity" *ngFor="let activity of latestActivities">
-    <img [src]="activity.snippet.thumbnails.default.url" alt="Thumbnail">
-    <p>{{ activity.snippet.title }}</p>
-    <!-- Ajoutez plus de détails sur l'activité si nécessaire -->
+<p class="search">
+  <mat-form-field appearance="outline">
+    <mat-label>Rechercher</mat-label>
+    <input matInput placeholder="Un streamer, peut-être ?" [(ngModel)]="searchQuery" (keyup.enter)="search()">
+    <mat-icon matSuffix (click)="search()">search</mat-icon>
+  </mat-form-field>
+</p>
+<div *ngIf="Searched then ok else nok"></div>
+<ng-template #ok>
+  <div class="latest-videos">
+    <h2>Dernières vidéos de {{YoutuberName}}</h2>
+    <div class="video" *ngFor="let video of LatestsVideos">
+      <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
+        <img [src]="video.snippet.thumbnails.medium.url" alt="{{ video.snippet.title }}">
+        <p>{{ video.snippet.title }}</p>
+      </a>
+    </div>
   </div>
-</div>
-
-<div class="latest-videos">
-  <h2>Dernières vidéos d'Alderiate</h2>
-  <div class="video" *ngFor="let video of alderiateVideos">
-    <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
-      <img [src]="video.snippet.thumbnails.medium.url" alt="{{ video.snippet.title }}">
-      <p>{{ video.snippet.title }}</p>
-    </a>
-  </div>
-</div>
+</ng-template>
+<ng-template #nok>
+  <div *ngIf="(YoutuberName == '') then EmptyQuery else NotEmptyQuery"></div>
+  <ng-template #EmptyQuery>
+    <h2>Recherchez un youtuber pour voir ses dernières vidéos</h2>
+  </ng-template>
+  <ng-template #NotEmptyQuery>
+    <h2>Aucune vidéo trouvée pour {{YoutuberName}} effectuez une autre recherche</h2>
+  </ng-template>
+</ng-template>
