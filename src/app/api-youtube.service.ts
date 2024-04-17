@@ -44,7 +44,7 @@ export class ApiYoutubeService {
   
   //récupérer les abonnements d'un compte avec son token : subscriptions?part=snippet&mine=true&maxResults=50&key=AIzaSyB3M9ebGOCaj3LwIUdeF1LVzOvtausAfVY
   getSubscriptions(accessToken: string): Observable<any> {
-    return this.http.get<any>(`${this.baseurl}/subscriptions?part=snippet&mine=true&maxResults=50&key=${this.key}`, {
+    return this.http.get<any>(`${this.baseurl}/subscriptions?part=snippet&mine=true&maxResults=100&key=${this.key}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }

@@ -5,4 +5,28 @@
   <button (click)="loginWithYouTube()">Se connecter avec YouTube</button>
 
 </div>
- 
+
+
+<!-- afficher les chaines suivies par les personnes -->
+
+<!-- <div class="youtube-followed-channels">
+  <h2>Chaines suivies</h2>
+  <div class="channell" *ngFor="let channel of channels">
+    <a [href]="'https://www.youtube.com/channel/' + channel.snippet.resourceId.channelId" target="_blank">
+      <img [src]="channel.snippet.thumbnails.medium.url" alt="{{ channel.snippet.title }}">
+      <p>{{ channel.snippet.title }}</p>
+    </a>
+  </div>
+</div> -->
+
+
+<mat-grid-list cols="5" rowHeight="2:1.8" gutterSize="1%">
+
+  <mat-grid-tile class="channell" *ngFor="let channel of channels">
+    <a [href]="'https://www.youtube.com/channel/' + channel.snippet.resourceId.channelId" target="_blank">
+      <img [src]="channel.snippet.thumbnails.medium.url" alt="{{ channel.snippet.title }}">
+      <p>{{ channel.snippet.title }}</p>
+    </a>
+  </mat-grid-tile>
+
+</mat-grid-list>

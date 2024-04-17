@@ -25,6 +25,13 @@
             <span *ngIf="!isCollapsed">Lives</span>
           </span>
         </a>
+        <a mat-list-item [routerLink]="['/YouLogin']">
+          <span class="entry">
+            <mat-icon>subscriptions</mat-icon>
+            <span *ngIf="!isCollapsed">Youtube</span>
+          </span>
+        </a>
+
         <a mat-list-item (click)="disconnect()">
           <span class="entry">
             <mat-icon>close</mat-icon>

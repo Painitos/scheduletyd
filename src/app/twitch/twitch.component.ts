@@ -17,7 +17,7 @@ export class TwitchComponent implements OnInit{
   private auth = inject(Auth);
   private user = user(this.auth);
 
-  private access_token : string = sessionStorage.getItem('access_token') || "" ;
+  private access_token : string = sessionStorage.getItem('twitch_access_token') || "" ;
   private client_id : string = "";
   private user_id : string = "";
   public followed_channels : any = [];
@@ -32,7 +32,7 @@ export class TwitchComponent implements OnInit{
   }
 
   private GetChannels() {
-    const access_token = sessionStorage.getItem('access_token') || "";
+    const access_token = sessionStorage.getItem('twitch_access_token') || "";
     this.apiTwitchService.validateToken(this.access_token).pipe(
     switchMap((data:any) => {
 
@@ -67,7 +67,7 @@ export class TwitchComponent implements OnInit{
     this.route.queryParams.subscribe(params => {
       if (params['access_token'] != null){
         this.access_token = params['access_token'];
-        sessionStorage.setItem('access_token', this.access_token);
+        sessionStorage.setItem('twitch_access_token', this.access_token);
       }else{
         this.user.subscribe((user) => {
             this.user_id = user?.uid || "";
@@ -78,7 +78,7 @@ export class TwitchComponent implements OnInit{
             }) : querySnapshot.forEach((doc) => {
               this.user_id = doc.data()['user_id'];
               this.access_token = doc.data()['access_token'];
-              sessionStorage.setItem('access_token', this.access_token);
+              sessionStorage.setItem('twitch_access_token', this.access_token);
             });
         });
         });

@@ -29,7 +29,7 @@ export class AgendaComponent implements OnInit {
 
   private GetScheduledStreamsToday(){
     const date = new Date();
-    const access_token : string = sessionStorage.getItem("access_token") || "";
+    const access_token : string = sessionStorage.getItem("twitch_access_token") || "";
     const client_id : string = sessionStorage.getItem("client_id") || "";
     var StreamsToday : any = [];
 

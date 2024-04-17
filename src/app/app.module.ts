@@ -33,6 +33,7 @@ import { YoutubeComponent } from './youtube/youtube.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { StreamerScheduleComponent } from './streamer-schedule/streamer-schedule.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { YoutubeLoginComponent } from './youtube-login/youtube-login.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',
@@ -62,6 +63,7 @@ export const authConfig: AuthConfig = {
     TwitchComponent,
     StreamerScheduleComponent,
     AgendaComponent,
+    YoutubeLoginComponent,
   ],
   imports: [
     BrowserModule,
